@@ -12,7 +12,15 @@ header {
 
 }
 
+#titleGroup {
+    text-align: center;
+
+}
+#searchbarGroup {
+    text-align: center;
+}
 h1 {
-color: white;
+    color: white;
+    font-size: 40px;
 
 }

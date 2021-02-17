@@ -11,7 +11,7 @@ header {
     background: radial-gradient(circle, rgb(25, 18, 160) 0%, rgb(18, 18, 192) 35%, rgba(0,212,255,1) 93%);
     border: 3px solid cornsilk;
     border-bottom: 0px;
-    
+ 
 
 }
 
@@ -19,6 +19,7 @@ header {
     text-align: center;
 
 }
+
 #searchbarGroup {
     text-align: center;
     padding-bottom: 50px;
@@ -28,12 +29,15 @@ header {
 #searchBar {
 
     width: 40%;
-}
+} 
+
+
 
 h1 {
     color: white;
     font-size: 50px;
     font-style: oblique;
+    text-shadow: 3px 4px black;
     
 
 }
@@ -43,7 +47,6 @@ h1 {
 
 #containerTitle{
     display: flex;
-    justify-content: space-between;
     height: 100px;
     width: 100%;
 }

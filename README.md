@@ -15,7 +15,7 @@ https://www.programmableweb.com/api/rotten-tomatoes
 
 TODO/FÖRSLAG
 
-Rekommendera filmer baserat gengre och betyg
+Rekommendera filmer baserat genre och betyg
 
 Ändra färg på rating texten baserat på hur bra/dålig
 

@@ -24,3 +24,45 @@ h1 {
     font-size: 40px;
 
 }
+
+
+/*  Flexbox for title bar  */
+
+#containerTitle{
+    display: flex;
+    height: 100px;
+}
+
+#flexTitle1, #flexTitle2{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    border: 3px solid grey;
+}
+
+#flexTitle1{
+    width: 20%;
+}
+
+/*  Flexbox for title bar ends  */
+
+
+/*  Flexbox for main content  */
+#containerMain{
+    display: flex;
+    height: 500px;
+}
+
+#flexMain1, #flexMain2{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    border: 3px solid grey;
+}
+
+/*  Flexbox for main content end  */
+
+#reviews{
+    background-color: red;
+    height: 400px;
+}

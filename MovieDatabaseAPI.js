@@ -1,3 +1,4 @@
+'use strict'
 // X-RapidAPI-Key
 
 // X-RapidAPI-Host
@@ -11,52 +12,81 @@ startButton.addEventListener("click", function(){
 });
 
 function getMovieDatabaseApi(){
-    const imdbUrl = new URL ("GET", "https://movie-database-imdb-alternative.p.rapidapi.com"); // Tror länken är fel
-
-    
-    imdbUrl.searchParams.append("s", "Avengers Endgame");
+    const imdbUrl = new URL ("GET", "https://movie-database-imdb-alternative.p.rapidapi.com") // Tror länken är fel
+    imdbUrl.searchParams.append("x-rapidapi-key", ""); 
     imdbUrl.searchParams.append("page", "1");
     imdbUrl.searchParams.append("r", "json");
+    imdbUrl.searchParams.append("s", "Avengers Endgame");
 
     return imdbUrl;
 }
-
-/*async function testApi(){
+/*
+async function testApi(){
     const imdbUrl = getMovieDatabaseApi();
     const serverResponse = await fetch(imdbUrl)
     const test = await serverResponse.json();
     console.log(test);
-}*/
+}
+*/
 
-fetch("https://movie-database-imdb-alternative.p.rapidapi.com/?s=Avengers%20Endgame&page=1&r=json",{ 
-	"method": "GET", 
+
+
+
+function testApi(){
+    const url = getMovieDatabaseApi();
+    fetch("https://movie-database-imdb-alternative.p.rapidapi.com/?s=Avengers%20Endgame&page=1&r=json", {
+	"method": "GET",
 	"headers": {
-		"x-rapidapi-key": "310a6c29c0mshc92100364ef585ap11ca38jsndf5fb43f6d40",
-		"x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com",
-        "s": "",
-        "page": "1",
-        "r": "json",
+		"x-rapidapi-key": "",
+		"x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com"
 	}
 })
 .then(response => {
-	console.log(response);
+    const test = response.json;
+	console.log(response); // response.text()
 })
-.catch(err => {
-	console.error(err);
+.catch(error => {
+	console.error(error);
 });
-
-
-
-
+}
 
 
 
 
 
 /*
+sendRequest = (title) => {
+   const req = unirest("GET", "https://movie-database-imdb-alternative.p.rapidapi.com/");
+   req.query({
+     "page": "1",
+     "r": "json",
+     "s": title
+   });
+   req.headers({
+     "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com",
+     "x-rapidapi-key": "YOUR_API_KEY"
+   });
+   req.end(function (res) {
+     if (res.error) throw new Error(res.error);
+     console.log(res.body);
+   });
+ }
+ */
 
 
-const data = null;
+
+
+
+
+
+
+/**/
+
+
+/*
+function testApi(){
+
+    const data = null;
 
 const xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
@@ -68,8 +98,12 @@ xhr.addEventListener("readystatechange", function () {
 });
 
 xhr.open("GET", "https://movie-database-imdb-alternative.p.rapidapi.com/?s=Avengers%20Endgame&page=1&r=json");
-xhr.setRequestHeader("x-rapidapi-key", "SIGN-UP-FOR-KEY");
+xhr.setRequestHeader("x-rapidapi-key", "");
 xhr.setRequestHeader("x-rapidapi-host", "movie-database-imdb-alternative.p.rapidapi.com");
 
 xhr.send(data);
+
+}
 */
+
+

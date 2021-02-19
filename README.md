@@ -17,6 +17,12 @@ http://www.omdbapi.com/
 
 TODO/FÖRSLAG
 
+
+Någon typ av startsida?
+
+Felmeddelanden/felhantering
+
+
 Rekommendera filmer baserat genre och betyg
 
 Ändra färg på rating texten baserat på hur bra/dålig

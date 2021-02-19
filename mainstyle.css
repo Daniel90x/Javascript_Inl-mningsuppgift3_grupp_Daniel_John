@@ -2,6 +2,7 @@ body {
     margin: 0px;
     padding: 0px;
     background-color: cornflowerblue;
+    
 
 
 }
@@ -44,6 +45,15 @@ h1 {
 
 
 /*  Flexbox for title bar  */
+main {
+  /*  background-image: ;*/
+
+
+
+
+}
+
+
 
 #containerTitle{
     display: flex;

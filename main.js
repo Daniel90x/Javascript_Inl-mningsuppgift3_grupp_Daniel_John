@@ -31,7 +31,6 @@ function buildmainLayout(){
     document.getElementById("poster").src=response.Poster;
 
 
-//flexTitle2
 
 
 }

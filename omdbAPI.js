@@ -2,7 +2,7 @@
 
 
 function getMovieDatabaseApi(search){
-    const omdbUrl = new URL ("http://www.omdbapi.com/?apikey=7fb63476")
+    const omdbUrl = new URL ("https://www.omdbapi.com/?apikey=7fb63476")
     omdbUrl.searchParams.append("page", "1");
     omdbUrl.searchParams.append("r", "json");
     omdbUrl.searchParams.append("s", search);
@@ -12,7 +12,7 @@ function getMovieDatabaseApi(search){
 }
 
 function getMovieDatabaseApiId(id){
-    const omdbUrl = new URL ("http://www.omdbapi.com/?apikey=7fb63476")
+    const omdbUrl = new URL ("https://www.omdbapi.com/?apikey=7fb63476")
     omdbUrl.searchParams.append("i", id);
     omdbUrl.searchParams.append("r", "json");
     omdbUrl.searchParams.append("plot", "full");

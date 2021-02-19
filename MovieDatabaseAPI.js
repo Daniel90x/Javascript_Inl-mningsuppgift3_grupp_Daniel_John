@@ -3,7 +3,7 @@
 
 // X-RapidAPI-Host
 // const search = document.getElementById("searchBar");
-
+/*
 
 function getMovieDatabaseApi(search){
     const imdbUrl = new URL ("https://movie-database-imdb-alternative.p.rapidapi.com")
@@ -52,3 +52,4 @@ async function callMdApi(search){
 
     return infoId;
 }
+*/

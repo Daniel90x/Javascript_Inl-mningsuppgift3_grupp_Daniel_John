@@ -36,6 +36,17 @@ function buildmainLayout(){
 
     document.getElementById("poster").src=response.Poster;
 
+    // Cast:
+    document.getElementById("castList").innerHTML = response.Actors;
+
+    // MovieInfo under:
+    document.getElementById("movieyearresultId").innerHTML = response.Year;
+    document.getElementById("directorresultId").innerHTML = response.Director;
+    document.getElementById("studioresultId").innerHTML = response.Production;
+    document.getElementById("genreresultId").innerHTML = response.Genre;
+
+
+
 
 
 }

@@ -37,7 +37,12 @@ function buildmainLayout(){
     document.getElementById("poster").src=response.Poster;
 
     // Cast:
-    document.getElementById("castList").innerHTML = response.Actors;
+    let castSplit = response.Actors.split(",");
+
+    document.getElementById("castList1").innerHTML = castSplit[0];
+    document.getElementById("castList2").innerHTML = castSplit[1];
+    document.getElementById("castList3").innerHTML = castSplit[2];
+    document.getElementById("castList4").innerHTML = castSplit[3];
 
     // MovieInfo under:
     document.getElementById("movieyearresultId").innerHTML = response.Year;

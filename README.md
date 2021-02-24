@@ -25,10 +25,9 @@ Felmeddelanden/felhantering
 
 Rekommendera filmer baserat genre och betyg
 
-Ändra färg på rating texten baserat på hur bra/dålig
-
 Trailer till filmerna (om vi har tid/ork)
 
 
 Lägg in videoplayer:
 https://videojs.com/getting-started/#customize
+https://developers.google.com/youtube/v3/docs/search/list?apix_params=%7B%22part%22%3A%22snippet%22%2C%22maxResults%22%3A25%2C%22q%22%3A%22surfing%22%7D

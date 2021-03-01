@@ -7,6 +7,8 @@ const startButton = document.getElementById("searchButton");
 
 let response;
 
+
+
 document.getElementById("searchBar").addEventListener("keyup", function(event){
     if (event.key === "Enter") {
       callApi()
@@ -17,14 +19,52 @@ startButton.addEventListener("click", callApi);
 
 async function callApi(){
     let search = document.getElementById("searchBar").value;
-    response = await callMdApi(search);
-    console.log(response);
-    if(response === undefined){
-        buildErrorLayout();
+    //response = await callMdApi(search);
+    //console.log(response);
+
+    /*try(navigator.onLine){
+
+        if(response === undefined){
+            buildErrorLayout();
+            return;
+        }
+    
+        buildmainLayout();
+
+
+
+    }
+    catch {
+
+
+
+    }*/
+
+
+    resetAll();
+    try{
+        response = await callMdApi(search);
+        console.log(response);
+        if(response === undefined){
+
+            buildErrorLayout();
+            return;
+
+        }
+          
+        else{
+            buildmainLayout();
+            return;
+
+        }
+
+    }
+
+    catch{
+        noConnection();
         return;
     }
 
-    buildmainLayout();
 }
 
 function buildmainLayout(){
@@ -36,7 +76,7 @@ function buildmainLayout(){
     document.getElementById("descriptionId").innerHTML = response.Plot;
 
 
-
+    document.getElementById("poster").style.display = "initial";
     document.getElementById("poster").src=response.Poster;
 
     // Cast:
@@ -64,6 +104,15 @@ function buildErrorLayout(){
     document.getElementById("filmTitel").innerHTML = "Movie not found!";
 }
 
+function noConnection(){
+    document.getElementById("filmTitel").innerHTML = "No connection!";
+
+
+}
+
+
+
+
 //Färg på ratings texten
 function criticColor(){
     let str = response.Ratings[1].Value.slice(0,2);
@@ -85,4 +134,32 @@ function criticColor(){
 
     }
 
+}
+
+// Reset funtion
+function resetAll(){
+    document.getElementById("criticId").innerHTML = "";
+
+    document.getElementById("descriptionId").innerHTML = "";
+
+
+    document.getElementById("poster").style.display = "none";
+    document.getElementById("poster").src="";
+
+    // Cast:
+    let castSplit = "";
+
+    document.getElementById("castList1").innerHTML = "";
+    document.getElementById("castList2").innerHTML = "";
+    document.getElementById("castList3").innerHTML = "";
+    document.getElementById("castList4").innerHTML = "";
+
+    // MovieInfo under:
+    document.getElementById("movieyearresultId").innerHTML = "";
+    document.getElementById("directorresultId").innerHTML = "";
+    document.getElementById("studioresultId").innerHTML = "";
+    document.getElementById("genreresultId").innerHTML = "";
+
+
+    
 }

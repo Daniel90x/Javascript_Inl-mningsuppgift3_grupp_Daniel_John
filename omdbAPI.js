@@ -28,6 +28,9 @@ async function callMdApi(search){
 })
     const info = await serverResponse.json();
     console.log(info);
+    if(info.Response === "False"){
+        return undefined;
+    }
 
 //Kallar på api med ID
 

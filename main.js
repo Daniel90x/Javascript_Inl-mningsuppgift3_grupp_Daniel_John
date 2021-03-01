@@ -19,12 +19,15 @@ async function callApi(){
     let search = document.getElementById("searchBar").value;
     response = await callMdApi(search);
     console.log(response);
+    if(response === undefined){
+        buildErrorLayout();
+        return;
+    }
 
     buildmainLayout();
 }
 
 function buildmainLayout(){
-
 
     document.getElementById("filmTitel").innerHTML = response.Title;
     criticColor();
@@ -56,18 +59,24 @@ function buildmainLayout(){
 
 }
 
+// Felhantering
+function buildErrorLayout(){
+    document.getElementById("filmTitel").innerHTML = "Movie not found!";
+}
+
+//Färg på ratings texten
 function criticColor(){
     let str = response.Ratings[1].Value.slice(0,2);
     var res = str.substring(str.length - 1, str.length);
     if(res==="%"){
         str = response.Ratings[1].Value.slice(0,1);
     }
-    if(str <= 30){
+    if(str < 30){
         document.getElementById("criticId").style.color = "red";
 
     }
 
-    if(str > 30 && str < 70 ){
+    if(str >= 30 && str < 70 ){
         document.getElementById("criticId").style.color = "black";
     }
 

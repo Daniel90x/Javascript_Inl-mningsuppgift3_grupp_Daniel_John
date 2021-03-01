@@ -1,7 +1,6 @@
 'use strict'
 
 // https://www.programmableweb.com/api/moviepilot
-// https://www.programmableweb.com/api/rotten-tomatoes
 
 const startButton = document.getElementById("searchButton");
 
@@ -19,27 +18,6 @@ startButton.addEventListener("click", callApi);
 
 async function callApi(){
     let search = document.getElementById("searchBar").value;
-    //response = await callMdApi(search);
-    //console.log(response);
-
-    /*try(navigator.onLine){
-
-        if(response === undefined){
-            buildErrorLayout();
-            return;
-        }
-    
-        buildmainLayout();
-
-
-
-    }
-    catch {
-
-
-
-    }*/
-
 
     resetAll();
     try{

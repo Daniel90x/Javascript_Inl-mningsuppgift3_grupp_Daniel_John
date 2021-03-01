@@ -1,7 +1,8 @@
 body {
     margin: 0px;
     padding: 0px;
-    background-color: cornflowerblue;
+    background-color: rgb(237, 100, 100);
+    
     
 
 
@@ -50,10 +51,14 @@ a{
     text-decoration: none;
 }
 
+
+
 #backGround{
     height: 100%;
     max-width: 100%;
     border-top: 3px solid cornsilk;
+    vertical-align: middle;
+    
 }
 
 
@@ -245,9 +250,9 @@ a{
 
 footer {
     background-color: rgb(69,199,252,1);
-    font-size: 25px;
+    font-size: 20px;
     border: 3px solid cornsilk;
-    border-top: 0px;
+    padding-left: 5px;
 
 
 

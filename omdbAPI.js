@@ -24,50 +24,25 @@ function getMovieDatabaseApiId(id){
 async function callMdApi(search){
     const omdbUrl = getMovieDatabaseApi(search);
     const serverResponse = await fetch(omdbUrl, {
-	"method": "GET",
-})
+	    "method": "GET",
+    })
+
     const info = await serverResponse.json();
     console.log(info);
+
     if(info.Response === "False"){
         return undefined;
     }
 
-//Kallar på api med ID
-
+    //Kallar på api med ID
     const idUrl = getMovieDatabaseApiId(info.Search[0].imdbID);
+
     const serverResponseId = await fetch(idUrl, {
-	"method": "GET",
-})
+	    "method": "GET",
+    })
+
     const infoId = await serverResponseId.json();
     console.log(infoId);
 
     return infoId;
 }
-
-
-
-
-
-
-/*function getomdbApi(){
-    const omdbUrl = new URL ("http://www.omdbapi.com/?apikey=7fb63476")// fel på api nycklen
-    omdbUrl.searchParams.append("i", "tt4154796");
-    omdbUrl.searchParams.append("plot", "short");
-    omdbUrl.searchParams.append("r", "json");
-    return omdbUrl;
-}
-
-async function callomdApi(){
-    const url = getomdbApi();
-    const serverRespone = await fetch(url, {
-        "method": "GET"
-    })
-    const info = await serverRespone.json();
-    console.log(info);
-}
-
-callomdApi();*/
-
-
-
-

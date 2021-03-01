@@ -5,8 +5,6 @@ Länk till vår webbplats: https://daniel90x.github.io/Javascript_Inl-mningsuppg
 Apier:
 https://www.programmableweb.com/api/moviepilot
 
-https://www.programmableweb.com/api/rotten-tomatoes
-
 http://www.omdbapi.com/
 
 
@@ -16,12 +14,6 @@ http://www.omdbapi.com/
 
 
 TODO/FÖRSLAG
-
-
-Någon typ av startsida?
-
-Felmeddelanden/felhantering
-
 
 Rekommendera filmer baserat genre och betyg
 

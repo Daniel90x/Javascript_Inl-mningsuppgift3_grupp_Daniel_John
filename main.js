@@ -46,14 +46,7 @@ async function callApi(){
         response = await callMdApi(search);
         console.log(response);
         if(response === undefined){
-
             buildErrorLayout();
-            return;
-
-        }
-          
-        else{
-            buildmainLayout();
             return;
 
         }
@@ -65,13 +58,26 @@ async function callApi(){
         return;
     }
 
+    buildmainLayout();
+
 }
 
 function buildmainLayout(){
+    document.getElementById("backGround").style.display = "none";
+    document.getElementById("containerTitle").style.display = "flex";
+    document.getElementById("containerMain").style.display = "flex";
+    document.getElementById("movieInfoContanier").style.display = "flex";
+
 
     document.getElementById("filmTitel").innerHTML = response.Title;
-    criticColor();
-    document.getElementById("criticId").innerHTML = response.Ratings[1].Value;
+    try{
+        criticColor();
+        document.getElementById("criticId").innerHTML = response.Ratings[1].Value;
+    }
+
+    catch{
+        document.getElementById("criticId").innerHTML = response.Ratings[0].Value;
+    }
 
     document.getElementById("descriptionId").innerHTML = response.Plot;
 
@@ -101,10 +107,18 @@ function buildmainLayout(){
 
 // Felhantering
 function buildErrorLayout(){
+    document.getElementById("backGround").style.display = "none";
+    document.getElementById("containerTitle").style.display = "flex";
+    document.getElementById("containerMain").style.display = "flex";
+    document.getElementById("movieInfoContanier").style.display = "flex";
     document.getElementById("filmTitel").innerHTML = "Movie not found!";
 }
 
 function noConnection(){
+    document.getElementById("backGround").style.display = "none";
+    document.getElementById("containerTitle").style.display = "flex";
+    document.getElementById("containerMain").style.display = "flex";
+    document.getElementById("movieInfoContanier").style.display = "flex";
     document.getElementById("filmTitel").innerHTML = "No connection!";
 
 
@@ -116,7 +130,7 @@ function noConnection(){
 //Färg på ratings texten
 function criticColor(){
     let str = response.Ratings[1].Value.slice(0,2);
-    var res = str.substring(str.length - 1, str.length);
+    let res = str.substring(str.length - 1, str.length);
     if(res==="%"){
         str = response.Ratings[1].Value.slice(0,1);
     }
@@ -147,7 +161,6 @@ function resetAll(){
     document.getElementById("poster").src="";
 
     // Cast:
-    let castSplit = "";
 
     document.getElementById("castList1").innerHTML = "";
     document.getElementById("castList2").innerHTML = "";

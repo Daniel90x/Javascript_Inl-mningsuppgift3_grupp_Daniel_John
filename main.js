@@ -48,6 +48,7 @@ function buildmainLayout(){
     document.getElementById("containerTitle").style.display = "flex";
     document.getElementById("containerMain").style.display = "flex";
     document.getElementById("movieInfoContanier").style.display = "flex";
+    document.getElementById("trailercontainer").style.display = "block";
 
 
     document.getElementById("filmTitel").innerHTML = response.Title;
@@ -84,8 +85,8 @@ function buildmainLayout(){
     // Trailer
     console.log("https://www.imdb.com/video/imdb/"+responseTrailer.videoId+"/imdb/embed?autoplay=false&width=480");
     
-    document.getElementById("trailerId").src = "https://www.imdb.com/video/imdb/"+responseTrailer.videoId+"/imdb/embed?autoplay=false&width=480";
 
+    document.getElementById("trailerId").src = "https://www.imdb.com/video/imdb/"+responseTrailer.videoId+"/imdb/embed?autoplay=false&width=853";
 
     
 
@@ -139,6 +140,7 @@ function criticColor(){
 // Reset funtion
 function resetAll(){
     document.getElementById("criticId").innerHTML = "";
+    document.getElementById("trailercontainer").style.display = "none";
 
     document.getElementById("descriptionId").innerHTML = "";
 

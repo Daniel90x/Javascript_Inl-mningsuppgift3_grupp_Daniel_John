@@ -21,6 +21,31 @@ function getMovieDatabaseApiId(id){
     return omdbUrl;
 }
 
+
+async function getImdbApi(id){
+    const imdbUrl = new URL ("https://imdb-api.com/en/API/Trailer/")
+    imdbUrl.searchParams.append("id", id);
+    imdbUrl.searchParams.append("apiKey", "k_z471ki9l");
+    let test;
+
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+       
+     await fetch(imdbUrl, requestOptions)
+        .then(response => response.json())
+        .then(result => test = result)
+        .catch(error => console.log('error', error));
+
+        return test;
+
+}
+
+
+
+
+
 async function callMdApi(search){
     const omdbUrl = getMovieDatabaseApi(search);
     const serverResponse = await fetch(omdbUrl, {

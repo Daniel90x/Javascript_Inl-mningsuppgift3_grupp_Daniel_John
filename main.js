@@ -4,7 +4,7 @@
 
 const startButton = document.getElementById("searchButton");
 
-let response;
+let response, responseTrailer;
 
 
 
@@ -28,6 +28,9 @@ async function callApi(){
             return;
 
         }
+
+        responseTrailer = await getImdbApi(response.imdbID);
+        console.log(responseTrailer);
 
     }
 
@@ -78,8 +81,13 @@ function buildmainLayout(){
     document.getElementById("genreresultId").innerHTML = response.Genre;
 
 
+    // Trailer
+    console.log("https://www.imdb.com/video/imdb/"+responseTrailer.videoId+"/imdb/embed?autoplay=false&width=480");
+    
+    document.getElementById("trailerId").src = "https://www.imdb.com/video/imdb/"+responseTrailer.videoId+"/imdb/embed?autoplay=false&width=480";
 
 
+    
 
 }
 

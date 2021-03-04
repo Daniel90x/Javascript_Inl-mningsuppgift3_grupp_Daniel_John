@@ -1,7 +1,5 @@
 'use strict'
 
-// https://www.programmableweb.com/api/moviepilot
-
 const startButton = document.getElementById("searchButton");
 
 let response, responseTrailer;

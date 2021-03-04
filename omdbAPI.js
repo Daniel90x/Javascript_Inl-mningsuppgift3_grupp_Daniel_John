@@ -1,5 +1,7 @@
 'use strict'
 
+// http://www.omdbapi.com/
+// https://imdb-api.com/
 
 function getMovieDatabaseApi(search){
     const omdbUrl = new URL ("https://www.omdbapi.com/?apikey=7fb63476")
